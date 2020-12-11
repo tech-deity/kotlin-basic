@@ -1,0 +1,35 @@
+        val btn2=findViewById<Button>(R.id.nactivity)
+
+        val ed1=findViewById<EditText>(R.id.name)
+        val ed2=findViewById<EditText>(R.id.ph_no)
+        val ed3=findViewById<EditText>(R.id.Ad_no)
+        // val bt=findViewById<Button>(R.id.btn)
+        btn2?.setOnClickListener()
+        {
+            des()
+        }
+    }
+     private fun des(){
+         
+        
+    }
+    
+
+    fun dat(view: View){
+        val txt1 = findViewById<TextView>(R.id.tvn)
+       val txt2 = findViewById<TextView>(R.id.tvp)
+      val txt3 = findViewById<TextView>(R.id.tvad)
+
+        val m1=ed1.text.toString()
+        val m2=ed2.text.toString()
+        val m3=ed3.text.toString()
+        val m4= m1 + " " + m2 + m3
+        txt1.apply { text=m1 }
+
+        txt2.apply { text=m2 }
+
+        txt3.apply { text=m3 }
+        Toast.makeText(applicationContext,m4,Toast.LENGTH_SHORT).show()
+
+        btn2.setVisibility(View.VISIBLE)
+
