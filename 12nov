@@ -1,0 +1,88 @@
+package com.techdeity.bhdefence
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.View
+import android.widget.*
+import org.w3c.dom.Text
+
+
+class LoginPage : AppCompatActivity() {
+
+
+
+    private var ed1:EditText?=null
+
+    private var ed2:EditText?=null
+
+    private var ed3:EditText?=null
+
+    private var btn1: Button?=null
+    private  var btn2: Button?=null
+    private var tx1:TextView?=null
+    private var tx2:TextView?=null
+    private var tx3:TextView?=null
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        window.decorView.systemUiVisibility= View.SYSTEM_UI_FLAG_FULLSCREEN
+        setContentView(R.layout.activity_login_page)
+
+
+        supportActionBar?.hide()
+
+
+        btn1=this.findViewById(R.id.btn)
+        btn2=this.findViewById(R.id.nactivity)
+
+        btn1?.setOnClickListener{
+
+            data()
+
+        }
+        btn2?.setOnClickListener { 
+            dada()
+        }
+
+
+
+    }
+
+    private fun dada() {
+
+        startActivity(Intent(this,first::class.java))
+        
+        
+        
+    }
+
+    private fun data() {
+        ed1=this.findViewById(R.id.name)
+
+        ed2=this.findViewById(R.id.ph_no)
+
+        ed3=this.findViewById(R.id.Ad_no)
+        var m1=ed1?.text.toString()
+        var m2=ed2?.text.toString()
+        var m3=ed3?.text.toString()
+
+        tx1=this.findViewById(R.id.tvp)
+
+        tx2=this.findViewById(R.id.tvn)
+
+        tx3=this.findViewById(R.id.tvad)
+
+        tx1?.apply { text=m1 }
+        tx2?.apply{text=m2}
+        tx3?.apply{text=m3}
+        var m4=m1+" "+m2+" "+m3
+
+        Toast.makeText(applicationContext,m4,Toast.LENGTH_SHORT).show()
+        btn2?.visibility=View.VISIBLE
+    }
+
+
+}
