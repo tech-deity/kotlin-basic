@@ -1,0 +1,58 @@
+package com.techdeity.agecalculator
+
+import android.app.DatePickerDialog
+import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.annotation.RequiresApi
+import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
+
+class MainActivity : AppCompatActivity() {
+    var day: Int= 0
+    var month: Int = 0
+    var year: Int = 0
+
+
+    var cday :Int = 0
+    var cmonth: Int = 0
+    var cyear: Int = 0
+
+
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+         cyear = Calendar.getInstance().get(Calendar.YEAR)
+         cmonth = Calendar.getInstance().get(Calendar.MONTH)
+
+         cday = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
+
+        cmonth=cmonth+1
+        val da = "$cday-$cmonth-$cyear"
+        pr_date.text=da
+
+        val c=Calendar.getInstance()
+         year=c.get(Calendar.YEAR)
+         month=c.get(Calendar.MONTH)
+
+         day=c.get(Calendar.DAY_OF_MONTH)
+
+        br_date.setOnClickListener {
+            val dpd=DatePickerDialog(this, DatePickerDialog.OnDateSetListener {
+                view, myear, mmonth, mdayOfMonth ->
+                br_date.setText(" $mdayOfMonth - ${mmonth+1} - $myear")
+            },year,month, day)
+            dpd.show()
+        }
+
+        calc_btn.setOnClickListener {
+
+            val cdate=br_date.text.toString()
+            result_tv.text=cdate
+
+        }
+    }
+}
