@@ -15,3 +15,5 @@ FindViewById
 Kotterknife (deprecated)
 AndroidAnnotations
 FindViewById is the 'official' method and it's easy to use, Kotlin suggests ViewBinding which has some boilerplate as I read (I haven't used it yet).
+
+edit the theme to AppCompact to change the color of button
