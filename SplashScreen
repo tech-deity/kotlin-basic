@@ -1,0 +1,4 @@
+//how to make splash Screen in android
+
+  Handler().postDelayed({startActivity(Intent(this,SecondActivity::class.java))
+        finish()},3000)
