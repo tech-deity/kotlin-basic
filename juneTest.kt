@@ -1,30 +1,17 @@
-class Student(val name :String="student", var  age:Int=99){
+class Student {
 
-    val sName:String
-    var sAge:Int
-    init{
-
-        if(name=="student"){
-            sName="NA"
-            sAge=0
-        }
-        else{
-            sName=name.uppercase()
-            sAge=age
-        }
-        println("student name is $sName")
-        println("student age is  $sAge")
-    }
+    constructor(name:String ,age:Int)
+    {
+        println("Student name is ${name.uppercase()}")
+        println("student age is $age")
 
     }
+    
+}
+ 
+ fun main(){
 
-    fun main() {
+     val obj = Student("vishal",27)
 
-        val stu=Student("vishal ",31)
-        println(stu)
-        val stu2=Student("rahul")
-        println(stu2)
-        val stu3=Student()
-        println(stu3)
-        
-    }
+     println(obj)
+ }
