@@ -1,0 +1,2 @@
+When we can declare a class inside another class using the keyword inner then it is called inner class. 
+With the help of the inner class, we can access the outer class property inside the inner class.
