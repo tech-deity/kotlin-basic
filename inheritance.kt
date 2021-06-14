@@ -127,3 +127,37 @@ fun main(){
     
     ceo("vishal",22,1323.22)
 }
+
+
+
+//fifth
+
+package org.kotlinlang.play         // 1
+
+open class phone(){
+    
+    var color :String="Rose "
+    fun company(name:String)
+    {
+        println("Company name is $name")
+    }
+}
+
+class iphone:phone(){
+    
+    
+    fun discolor(){
+        
+        println("Color is ${super.color}")
+   
+    super.company("Iphone")
+    }
+    
+   
+}
+
+fun main(){
+    
+    val p =iphone()
+    p.discolor()
+}
