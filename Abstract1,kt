@@ -1,0 +1,36 @@
+//we cannot create object of abstract class
+// property and member function are by default non abstract
+// abstract class is always open so we dont need to write open always 
+// if member function is abstract it must be implemented in child class
+// an abstract member function doesnt have body only method and signature , the implementation is done in the child class
+
+
+package org.kotlinlang.play         // 1
+
+
+abstract class Student(sname:String,sid:Int){
+    
+    init{
+        
+        println("student name is $sname")
+        println("Student class is $sid")
+    }
+    
+    fun nonabstract(){
+        println("this is non abstract function ")
+    }
+    abstract fun func(message:String)
+    
+}
+class College(name:String , sid:Int):Student(name,sid){
+    override fun func(message:String){
+        
+        println(message)
+    }
+}
+fun main(){
+    
+    val obj= College("vishal",12)
+    obj.nonabstract()
+    obj.func("vishal study in kendriya vidyalaya ")
+}
