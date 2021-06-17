@@ -32,3 +32,26 @@ fun main(){
     w.dob("22 dec 2000")
     
 }
+
+
+open abstract class abc{
+    abstract var y :Int
+    fun m1(){
+        
+        println("non abstract function ")
+    }
+}
+
+class c :abc(){
+    override var y : Int=22
+    
+}
+
+
+fun main() {                        // 2
+      
+    
+    val obj = c()
+    obj.m1()
+    println(obj.y)
+}
